@@ -47,7 +47,6 @@ export default function Estrutura_Login(){
                 var div_i = document.createElement("input")
                 div_i.id = "item_div"
                 div_i.innerHTML = input_cadast.appendChild(div_i)
-                //alert('oi')
             }
 
             //Criar botão para adicionar um novo usuário
