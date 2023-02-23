@@ -2,28 +2,24 @@ import React, {createElement, useState} from 'react'
 import ReactDOM from 'react-dom'
 import ico_user from '/home/isa/projeto_login/client/src/componentes/imagens/ico_user.ico'
 import cadeado from '/home/isa/projeto_login/client/src/componentes/imagens/cadeado.ico'
-
+import Axios from "axios"
 
 export default function Estrutura_Login(){
-    const [Usuario, AlterUsuario] = useState({user:"", senha:""})
+    const [Usuario, AlterUsuario] = useState({user:"", senha:"", RepetirSenha:""})
     
     var HandleChangeUsuario = (e) => {
-        //Passe Axios.post e envie o site para acessar determinada porta. Em seguida vamos enviar os dados email para o front
-        //para criar o registro. Para finalizar adicione o .then para receber a resposta.
         if (e.target.getAttribute("name") == "nome_usu"){
-            AlterUsuario({user:e.target.value, "senha": Usuario.senha})
+            AlterUsuario({user:e.target.value, senha: Usuario.senha, RepetirSenha: Usuario.RepetirSenha})
             }
         
         else if (e.target.getAttribute("name") == "senha_usu"){
-            AlterUsuario({user: Usuario.user, senha: e.target.value})
+            AlterUsuario({user: Usuario.user, senha: e.target.value, RepetirSenha: Usuario.RepetirSenha})
+        }
+        else if (e.target.getAttribute("name") == "input_cadast"){
+            AlterUsuario({user: Usuario.user, senha: Usuario.senha, RepetirSenha: e.target.value})
         }
     }
 
-    var VerificaUsuario = () => {
-        if (Usuario.user in db){
-            alert("oi")
-        }
-    }
     
     var Cadastro = () => {
             var label_cadastro = document.getElementById("repetir_senha")
@@ -46,6 +42,11 @@ export default function Estrutura_Login(){
                 var input_cadast = document.getElementById("input_cadastro")
                 var div_i = document.createElement("input")
                 div_i.id = "item_div"
+                div_i.name = "input_cadast"
+                div_i.onchange = (e) => {  
+                   HandleChangeUsuario(e)
+                   console.log(e)
+                };
                 div_i.innerHTML = input_cadast.appendChild(div_i)
             }
 
@@ -55,9 +56,26 @@ export default function Estrutura_Login(){
                 var cadast_user = document.getElementById("add_user")
                 var div_b = document.createElement("button")
                 div_b.id = "item_btn"
+                div_b.name = "testk"
                 div_b.innerHTML = "Criar conta"; cadast_user.appendChild(div_b)
+
+                {/*O próximo passo é usar método post do axios para enviar o server considerado o link https://localhost:3001/register e
+            uma chave para enviar os dados do front.
+                Pelo fato do processo trabalhar com props, foi adicionado .then() no final.
+                O registro está feito no front-end, agora vamos fazer o processo de pegar e cadastrar os dados no server*/}
+                div_b.onclick = function (values) {
+                    Axios.post("http://localhost:3001/register",
+                    {
+                        nome: values.Usuario.user,
+                        senha: values.Usuario.senha,
+                        RepetirSenha: values.Usuario.RepetirSenha
+                    }).then((resposta)=>{console.log(resposta)})
+                    
+                };
             }
+
     }
+
     
     return(
         <section>
@@ -91,6 +109,7 @@ export default function Estrutura_Login(){
             </div>
             <p>{Usuario.user}</p>
             <p>{Usuario.senha}</p>
+            <p>{Usuario.RepetirSenha}</p>
         </section>
         
     )
