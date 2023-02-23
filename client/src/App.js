@@ -6,7 +6,7 @@ import './App.css'
 export default function App(){
     return(
         <>
-            <Estrutura_Login user={Usuario.user}/>
+            <Estrutura_Login/>
             <Conteudo />
         </>
     )
