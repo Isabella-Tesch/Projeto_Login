@@ -83,11 +83,52 @@ app.post("/EnviarDadosNewUser", (req,res) =>{
     const NewUserSenha = req.body.Senha_New_User
     const NewUserRepetirSenha = req.body.Repetir_Senha_New_User
 
-    console.log(NewUserName)
+    if (NewUserName.length > 0 && NewUserSenha.length > 0 && NewUserRepetirSenha.length > 0){
+
+        const VerificaSeUserExiste = 'SELECT * FROM usuarios WHERE nome_usu = ?'
+
+        db.query(VerificaSeUserExiste, [NewUserName], (erro, resultado)=>{
+            if (erro){
+                console.log("Houve um erro ao consultar a tabela: " + erro)
+            }
+            else{
+                if (resultado.length > 0){
+                    //res.json({UserExiste: true})
+                    var mensagem = ["O usuário já existe!"]
+                    res.json({mensagem})
+                }
+                else{
+                    var sql = "INSERT INTO usuarios (nome_usu, senha_usu, RepetirSenha) VALUES (?, ?, ?)"
+                    var Dados_New_User = [NewUserName, NewUserSenha, NewUserRepetirSenha]
+                    if (NewUserSenha == NewUserRepetirSenha){
+                        db.query(sql, Dados_New_User, (erro, resultado)=>{
+                            if (erro){
+                                console.log("Houve um erro ao inserir o dado: " + erro)
+                            }
+                            else{
+                                var mensagem = ["Usuário criado com sucesso!"]
+                                res.json({mensagem})
+                            }
+                        })
+                    }
+                    else{
+                        var mensagem = ["As senhas devem ser iguais!"]
+                        res.json({mensagem})
+                    }
+                }
+            }
+        })
+    }
+    else{
+        var mensagem = ["Preencha todos os campos!"]
+        res.json({mensagem})
+    }
+
+    /*console.log(NewUserName)
     console.log(NewUserSenha)
     console.log(NewUserRepetirSenha)
 
-    res.json({ success: true });
+    res.json({ success: true });*/
 })
 
 app.listen(3001, ()=>{

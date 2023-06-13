@@ -108,11 +108,32 @@ input#box_repetir_senha_new_user{
     box-shadow: 15px 5px 15px black;
 }
 
-.Estilo_Msg_New_User{
+.Estilo_Msg_Do_Server{
     font-family: 'Courier New', Courier, monospace;
     font-size: 15px;
     position: absolute;
     top: 225px;
-    left: 50px;
+    left: 60px;
     text-shadow: 5px 5px 5px black;
+}
+
+#img_cadeado_cadastro{
+    width: 25px;
+    position: absolute;
+    top: 115px;
+    left: 30px;
+}
+
+#img_cadeado2_cadastro{
+    width: 25px;
+    position: absolute;
+    top: 155px;
+    left: 30px;
+}
+
+#img_new_user{
+    width: 25px;
+    position: absolute;
+    top: 45px;
+    left: 30px;
 }
