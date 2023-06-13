@@ -1,7 +1,8 @@
 import {useState, useRef} from 'react'
 import React from 'react'
 import Axios from "axios"
-
+import Cadeado from '/home/isa/projeto_login/client/src/componentes/imagens/cadeado.ico'
+import Img_NewUser from '/home/isa/projeto_login/client/src/componentes/imagens/ico_user.ico'
 
 export default function Cadastro_User({RemoveConteudoLogin}){
 
@@ -39,19 +40,16 @@ export default function Cadastro_User({RemoveConteudoLogin}){
 
         Axios.post("http://localhost:3001/EnviarDadosNewUser", DadosNewUser)
         .then((resposta)=>{
+            var MsgDoServer = resposta.data.mensagem
 
-            if (resposta.data.success && !document.getElementById('MsgParaNewUser')) {
+            document.getElementById('Container_Msg_Server').innerHTML = ''
 
-                var Msg_User_Criado = document.createElement('label')
-
-                Msg_User_Criado.id = 'MsgParaNewUser';
-
-                Msg_User_Criado.textContent = 'Usuário criado com sucesso!'
-
-                Msg_User_Criado.classList.add('Estilo_Msg_New_User')
-                
-                document.getElementById('Container_Msg_New_User').appendChild(Msg_User_Criado);
-              }
+            MsgDoServer.forEach((mensagem)=>{
+                var MsgParaCliente = document.createElement('label')
+                MsgParaCliente.textContent = mensagem
+                MsgParaCliente.classList.add('Estilo_Msg_Do_Server')
+                document.getElementById('Container_Msg_Server').appendChild(MsgParaCliente)
+            })
         })
         .catch((erro)=>{
             console.log(erro)
@@ -72,14 +70,20 @@ export default function Cadastro_User({RemoveConteudoLogin}){
 
                         <input id="input_new_user" name="Nome_Novo_User" value={CadastroNewUser.NewUser} placeholder="Nome" onChange={(e)=>HandleInputCadastroChange(e)}></input>
 
+                        <img id="img_new_user" src={Img_NewUser}/>          
+
                         <label id="txt_senha_new_user">Senha</label>
 
                         <input id="box_senha_new_user" name="Senha_Novo_User" value={CadastroNewUser.NewSenha} placeholder="Digite uma senha" onChange={(e)=>HandleInputCadastroChange(e)}></input>
+                        
+                        <img id="img_cadeado_cadastro" src={Cadeado} alt="Img_Cadeado"/>
+
+                        <img id="img_cadeado2_cadastro" src={Cadeado}/>
 
                         <input id="box_repetir_senha_new_user" name="RepetirSenha_Novo_User" value={CadastroNewUser.NewRepetirSenha} placeholder="Digite novamente a senha" onChange={(e)=>HandleInputCadastroChange(e)}></input>
 
                         <button id="btn_cadastrar_new_user" onClick={()=> EnviarDadosNewUserParaServer()}>Cadastrar-se</button>
-                        <p id="Container_Msg_New_User"></p>
+                        <p id="Container_Msg_Server"></p>
                     </section>
                 </div>
             )}
