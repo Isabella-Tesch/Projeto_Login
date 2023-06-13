@@ -22,7 +22,7 @@ section{
     
 }
 
-p#cadastro{
+p#txt_cadastro{
     font: normal 15px courier;
     position: absolute;
     left: 25px;
@@ -50,36 +50,69 @@ button#btn_entrar{
     border-color:rgb(0, 153, 255)
 }
 
-button#btn_cadastro{
-    padding: 3px;
-    width: 80px;
-    border-radius: 5px;
+#section_cadastro{
+    width: 300px;
+    height: 220px;
+    padding: 10px;
+}
+
+#txt_new_user{
+    text-align: center;
+    font: normal 20px courier;
+}
+
+#txt_senha_new_user{
     position: absolute;
-    left: 230px;
+    top: 90px;
+    left: 138px;
+}
+
+input#input_new_user{
+    border-radius: 10px;
+    position: absolute;
+    top: 45px;
+    left: 60px;
+}
+
+input#box_senha_new_user{
+    border-radius: 10px;
+    position: absolute;
+    top: 118px;
+    left: 60px;
+}
+
+input#box_repetir_senha_new_user{
+    position:absolute;
+    top: 155px;
+    left: 60px;
+    border-radius: 10px;
+}
+
+#btn_cadastrar_user{
+    position: absolute;
     top: 210px;
-    background-color: rgb(0, 119, 255);
+    left: 230px;
+    border-radius: 5px;
+    background: rgb(0, 119, 255);
     border-color: rgb(0, 119, 255);
+    padding: 1px;
 }
 
-.Conteudo{
-    background: white;
-}
-
-#item_div{
-    border-radius: 10px;
+#btn_cadastrar_new_user{
     position: absolute;
-    top: 5px;
-    left: 45px;
+    top: 190px;
+    left: 125px;
+    border-radius: 10px;
+    padding: 3px;
+    text-shadow: 2px 3px 5px black;
+    box-shadow: 15px 5px 15px black;
 }
 
-#item_btn{
-    border-radius: 10px;
-    padding: 5px;
-    background: rgb(0, 124, 124);
-    color: white;
-    border-color: rgb(0, 124, 124);
+.Estilo_Msg_New_User{
     font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
     position: absolute;
-    top: 212px;
-    left: 120px;
+    top: 225px;
+    left: 50px;
+    text-shadow: 5px 5px 5px black;
 }
