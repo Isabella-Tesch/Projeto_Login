@@ -74,13 +74,13 @@ export default function Cadastro_User({RemoveConteudoLogin}){
 
                         <label id="txt_senha_new_user">Senha</label>
 
-                        <input id="box_senha_new_user" name="Senha_Novo_User" value={CadastroNewUser.NewSenha} placeholder="Digite uma senha" onChange={(e)=>HandleInputCadastroChange(e)}></input>
+                        <input id="box_senha_new_user" type="password" name="Senha_Novo_User" value={CadastroNewUser.NewSenha} placeholder="Digite uma senha" onChange={(e)=>HandleInputCadastroChange(e)}></input>
                         
                         <img id="img_cadeado_cadastro" src={Cadeado} alt="Img_Cadeado"/>
 
                         <img id="img_cadeado2_cadastro" src={Cadeado}/>
 
-                        <input id="box_repetir_senha_new_user" name="RepetirSenha_Novo_User" value={CadastroNewUser.NewRepetirSenha} placeholder="Digite novamente a senha" onChange={(e)=>HandleInputCadastroChange(e)}></input>
+                        <input id="box_repetir_senha_new_user" type="password" name="RepetirSenha_Novo_User" value={CadastroNewUser.NewRepetirSenha} placeholder="Digite novamente a senha" onChange={(e)=>HandleInputCadastroChange(e)}></input>
 
                         <button id="btn_cadastrar_new_user" onClick={()=> EnviarDadosNewUserParaServer()}>Cadastrar-se</button>
                         <p id="Container_Msg_Server"></p>

@@ -26,7 +26,16 @@ export default function Estrutura_Login(){
         }
         Axios.post("http://localhost:3001/EnviarDadosLogin", Dados_Login)
         .then((resposta) => {
-            console.log(resposta)
+            var MsgDoServer = resposta.data.msg
+
+            document.getElementById("ContainerMsgServer").innerHTML = ''
+
+            MsgDoServer.forEach((mensagem)=>{
+                var MsgParaCliente = document.createElement('label')
+                MsgParaCliente.textContent = mensagem
+                MsgParaCliente.classList.add('EstiloMsgUser')
+                document.getElementById("ContainerMsgServer").appendChild(MsgParaCliente)
+            })
         })
         .catch((erro) => {
             console.log(erro)
@@ -59,6 +68,8 @@ export default function Estrutura_Login(){
                     <button id="btn_entrar" onClick={()=> EnviarDadosParaServidor()}><strong>Entrar</strong></button> 
                     <br/>
                     <br/>
+                    
+                    <p id="ContainerMsgServer"></p>
                 </section>
             )}
             <Cadastro_User RemoveConteudoLogin={RemoverConteudoLogin}/>

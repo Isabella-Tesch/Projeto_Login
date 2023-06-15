@@ -15,67 +15,32 @@ const db = mysql.createConnection({
 
 app.use(cors())
 
-/*app.post('/EnviarDadosCadastro', (req, res) => {
-    const {user, senha, RepetirSenha} = req.body;
-
-    console.log(req.body.user)
-    console.log(req.body.senha)
-    console.log(req.body.RepetirSenha)
-    console.log(user)
-
-    if (!req.body.user || !req.body.senha || !req.body.RepetirSenha){
-        console.log("Dados incompletos! kj ")
-        return res.status(400).json({ sucesso: false, message: "Dados incompletos! Certifique-se de preencher todos os campos." });
-    }
-
-    if (req.body.user.length > 0 && req.body.senha.length > 0){
-        console.log('k')
-        if (req.body.senha !== req.body.RepetirSenha){
-            console.log("As senhas devem ser iguais!")
-            return res.status(400).json({sucesso: false, message: "As senhas não se coincidem!"})
-        }
-        else{
-            console.log("Requisições satisfeitas.")
-            res.status(200).json({sucesso: true, message: "Cadastro realizado com sucesso!"})
-        }
-    }
-
-})*/
-
 app.post("/EnviarDadosLogin", (req, res) => {
     const nome_usuario = req.body.user
     const senha_usuario = req.body.senha
 
     if (nome_usuario.length > 0 && senha_usuario.length > 0){
-        const VerificaSeUserExiste = "SELECT * from usuarios WHERE nome_usu = ?"
-        db.query(VerificaSeUserExiste, [nome_usuario], (erro, resultado)=>{
+        var sql = "SELECT * FROM usuarios WHERE nome_usu = ? AND senha_usu = ?"
+        db.query(sql, [nome_usuario, senha_usuario], (erro, resultado)=>{
             if (erro){
-                console.log("Houve um erro ao consultar a tabela" + erro)
+                console.log("Houve ao executar a consulta: ", erro)
+            }
+            
+            if (resultado.length > 0){
+                var msg = [`Bem vindo ${nome_usuario}!`]
+                res.json({msg})
             }
             else{
-                if (resultado.length > 0){
-                    console.log("Usuário já existe!")
-                }
-                else{
-                    var sql = "INSERT INTO usuarios (nome_usu, senha_usu) VALUES (?, ?)"
-                    var dados_usuario_novo = [nome_usuario, senha_usuario]
-                    db.query(sql, dados_usuario_novo, (erro, resultado)=>{
-                        if (erro){
-                            console.log("Houve um erro ao inserir o dado: erro")
-                        }
-                        else{
-                            console.log("Dados do novo usuário inseridos na tabela com sucesso.")
-                        }
-                    })
-                }
+                var msg = ['Usuário ou senha incorretos!']
+                res.json({msg})
             }
-        })
+        })   
     }
 
     else{
-        console.log("Preencha todos os campos.")
+        var msg = ["Preencha todos os campos."]
+        res.json({msg})
     }
-
 })
 
 app.post("/EnviarDadosNewUser", (req,res) =>{
@@ -89,11 +54,10 @@ app.post("/EnviarDadosNewUser", (req,res) =>{
 
         db.query(VerificaSeUserExiste, [NewUserName], (erro, resultado)=>{
             if (erro){
-                console.log("Houve um erro ao consultar a tabela: " + erro)
+                console.log("Houve um erro ao consultar a tabela: ", erro)
             }
             else{
                 if (resultado.length > 0){
-                    //res.json({UserExiste: true})
                     var mensagem = ["O usuário já existe!"]
                     res.json({mensagem})
                 }
@@ -123,12 +87,6 @@ app.post("/EnviarDadosNewUser", (req,res) =>{
         var mensagem = ["Preencha todos os campos!"]
         res.json({mensagem})
     }
-
-    /*console.log(NewUserName)
-    console.log(NewUserSenha)
-    console.log(NewUserRepetirSenha)
-
-    res.json({ success: true });*/
 })
 
 app.listen(3001, ()=>{
