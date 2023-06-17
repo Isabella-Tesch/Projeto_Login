@@ -3,6 +3,7 @@ import React from 'react'
 import Axios from "axios"
 import Cadeado from '/home/isa/projeto_login/client/src/componentes/imagens/cadeado.ico'
 import Img_NewUser from '/home/isa/projeto_login/client/src/componentes/imagens/ico_user.ico'
+import '/home/isa/projeto_login/client/src/App.css'
 
 export default function Cadastro_User({RemoveConteudoLogin}){
 

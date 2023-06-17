@@ -1,4 +1,3 @@
-
 img#img_user{
     width:25px;
     position: absolute;
@@ -11,26 +10,30 @@ img#img_cadeado{
     left: 25px;
 }
 
-body{
-    background: blue;
-}
-
-section{
-    background: rgb(85, 201, 255);
-    border-radius: 20px;
+.ConteudoLogin{
+    box-shadow: 5px 5px 5px white;
+    background: #CF32FC;
+    border-radius: 10px;
     text-align: center;
     padding: 10px;
     width: 300px;
-    height:220px;
+    height:300px;
     font: normal 20px courier;
     position: relative;
+    top: 145px;
+    left: 510px;
 }
 
 p#txt_cadastro{
     font: normal 15px courier;
     position: absolute;
-    left: 25px;
-    top: 200px;
+    left: 525px;
+    top: 400px;
+    color: white;
+}
+
+#Label_Nome{
+    color: white;
 }
 
 input#box_user{
@@ -61,6 +64,7 @@ button#btn_entrar{
     width: 300px;
     height: 220px;
     padding: 10px;
+    background-color: #F23530;
 }
 
 #txt_new_user{
