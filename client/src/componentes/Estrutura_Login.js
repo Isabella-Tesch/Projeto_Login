@@ -3,6 +3,7 @@ import ico_user from '/home/isa/projeto_login/client/src/componentes/imagens/ico
 import cadeado from '/home/isa/projeto_login/client/src/componentes/imagens/cadeado.ico'
 import Axios from "axios"
 import Cadastro_User from './Cadastro_User'
+import "/home/isa/projeto_login/client/src/App.css"
 
 export default function Estrutura_Login(){
     const [Usuario, AlterUsuario] = useState({user:"", senha:""})
@@ -50,7 +51,7 @@ export default function Estrutura_Login(){
     return(
         <div>
             {MostrarConteudoLogin && (
-                <section>
+                <section className='ConteudoLogin'>
                     <label id="Label_Nome">Nome</label><br/>
                     
                     <img id="img_user" src={ico_user} alt="Logo Usuário"/> {" "}
