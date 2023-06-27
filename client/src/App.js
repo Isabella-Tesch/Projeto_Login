@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import Estrutura_Login from './componentes/Estrutura_Login'
 import './EstiloPaginaInicial.css'
+import MeuLogo from '/home/isa/projeto_login/client/src/componentes/imagens/Meu_Logo.png'
+import PageSobre from './componentes/PageSobre'
 
 export default function App(){
     const [ExibirPageInicial, AlterExibirPageInicial] = useState(false)
@@ -50,6 +52,7 @@ export default function App(){
                 <header>
                     <nav>
                         <ul>
+                            <li><img id="LogoTech" src={MeuLogo} alt="Logo do site"/></li>
                             <li><a href="#" onClick={()=> HandleItemMenuClick('PageInicial')}>Página Inicial</a></li>
                             <li><a href="#" onClick={()=> HandleItemMenuClick('Sobre')}>Sobre</a></li>
                             <li><a href="#" onClick={()=> HandleItemMenuClick('Projetos')}>Projetos</a></li>
@@ -61,6 +64,7 @@ export default function App(){
 
                 <div>
                     {ItemMenuSelecionado == 'Login' && <Estrutura_Login />}
+                    {ItemMenuSelecionado == 'Sobre' && <PageSobre />}
                 </div>
             </section>
         </>

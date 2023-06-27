@@ -5,7 +5,7 @@ import Cadeado from '/home/isa/projeto_login/client/src/componentes/imagens/cade
 import Img_NewUser from '/home/isa/projeto_login/client/src/componentes/imagens/ico_user.ico'
 import '/home/isa/projeto_login/client/src/App.css'
 
-export default function Cadastro_User({RemoveConteudoLogin}){
+export default function Cadastro_User({RemoveConteudoLogin, RetornaLogin, MostrarBtnTxtDoCadastro}){
 
     const [CadastroNewUser, AlterCadastroNewUser] = useState({NewUser:"", NewSenha:"", NewRepetirSenha:""})
     const [MostrarConteudoCadastro, AlterMostrarConteudoCadastro] = useState(false)
@@ -30,6 +30,11 @@ export default function Cadastro_User({RemoveConteudoLogin}){
         else if (e.target.getAttribute("name") == "RepetirSenha_Novo_User"){
             AlterCadastroNewUser({...CadastroNewUser, NewRepetirSenha: e.target.value})
         }
+    }
+
+    var RetornarConteudoLogin = () => {
+        AlterMostrarConteudoCadastro(false)
+        RetornaLogin()
     }
 
     var EnviarDadosNewUserParaServer = () => {
@@ -59,9 +64,13 @@ export default function Cadastro_User({RemoveConteudoLogin}){
 
     return(
         <div>
-            <p id="txt_cadastro" ref={referencia_txt_cadastro}><strong>Não possui cadastro?</strong></p>
+            {MostrarBtnTxtDoCadastro && (
+                <div>
+                    <p id="txt_cadastro" ref={referencia_txt_cadastro}><strong>Não possui cadastro?</strong></p>
 
-            <button id="btn_cadastrar_user" ref={referencia_btn} onClick={()=> CadastrarUser()}><strong>Cadastrar</strong></button>
+                    <button id="btn_cadastrar_user" ref={referencia_btn} onClick={()=> CadastrarUser()}><strong>Cadastrar</strong></button>
+                </div>
+            )}
 
             {/*Se o state MostrarConteudoCadastro for true, os componentes do cadastro vão aparecer.*/}
             {MostrarConteudoCadastro && (
@@ -84,7 +93,13 @@ export default function Cadastro_User({RemoveConteudoLogin}){
                         <input id="box_repetir_senha_new_user" type="password" name="RepetirSenha_Novo_User" value={CadastroNewUser.NewRepetirSenha} placeholder="Digite novamente a senha" onChange={(e)=>HandleInputCadastroChange(e)}></input>
 
                         <button id="btn_cadastrar_new_user" onClick={()=> EnviarDadosNewUserParaServer()}>Cadastrar-se</button>
+                        
                         <p id="Container_Msg_Server"></p>
+
+                        <p id="TxtUserTemConta">Já possui conta? </p>
+
+                        <button id="btn_retorna_login" onClick={()=>RetornarConteudoLogin()}>Conecte-se</button>
+
                     </section>
                 </div>
             )}
