@@ -1,165 +1,226 @@
 img#img_user{
     width:25px;
     position: absolute;
-    left: 25px;
+    left: 20px;
+    top: 45px;
 }
 
 img#img_cadeado{
     width: 25px;
     position: absolute;
-    left: 25px;
+    left: 20px;
+    top: 115px;
 }
 
 .ConteudoLogin{
-    box-shadow: 5px 5px 5px white;
-    background: #CF32FC;
+    box-shadow: 5px 5px 5px #96AAB0;
+    background: #8189FA;
     border-radius: 10px;
     text-align: center;
     padding: 10px;
     width: 300px;
     height:300px;
-    font: normal 20px courier;
+    font-family: Arial, Helvetica, sans-serif;
     position: relative;
     top: 145px;
     left: 510px;
 }
 
 p#txt_cadastro{
-    font: normal 15px courier;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
     position: absolute;
-    left: 525px;
+    left: 530px;
     top: 400px;
     color: white;
+    text-shadow: 4px 4px 5px black;
 }
 
 #Label_Nome{
-    color: white;
+    color: black;
+    text-shadow: 2px 3px 5px white;
+    font-size: 17px;
+    position: relative;
+    top: 15px;
+    text-align: center;
 }
 
 input#box_user{
     border-radius: 10px;
-    position: absolute;
-    left: 60px;
+    position: relative;
+    /*left: 60px;*/
+    margin: auto;
+    top: 20px;
+}
+
+#Label_Senha{
+    color: black;
+    text-shadow: 2px 3px 5px white;
+    font-size: 17px;
+    position: relative;
+    text-align: center;
+    top: 25px;
 }
 
 input#box_senha{
     border-radius: 10px;
-    position: absolute;
-    left: 60px;
+    position: relative;
+    margin: auto;
+    top: 30px;
 }
 
 button#btn_entrar{
-    border-radius: 20px;
-    background-color: rgb(0, 119, 255);
+    border-radius: 5px;
+    background-color: #96AAB0;
     width: 100px;
     height: 30px;
-    font-family: 'Courier New', Courier, monospace;
-    border-color:rgb(0, 153, 255);
-    position: absolute;
-    top: 145px;
-    left: 115px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-color: #96AAB0;
+    position: relative;
+    margin: auto;
+    top: 35px;
+    text-shadow: 2px 3px 5px black;
+    color: white;
 }
 
 #section_cadastro{
+    position: relative;
+    margin: auto;
+    top: 145px;
     width: 300px;
-    height: 220px;
+    height: 300px;
     padding: 10px;
-    background-color: #F23530;
+    background-color: #8189FA;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #96AAB0;
 }
 
 #txt_new_user{
-    text-align: center;
-    font: normal 20px courier;
+    position: relative;
+    top: 20px;
+    left: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+
 }
 
 #txt_senha_new_user{
     position: absolute;
-    top: 90px;
-    left: 138px;
+    top: 100px;
+    left: 135px;
 }
 
 input#input_new_user{
     border-radius: 10px;
-    position: absolute;
-    top: 45px;
-    left: 60px;
+    position: relative;
+    top: 30px;
+    left: 45px;
 }
 
 input#box_senha_new_user{
     border-radius: 10px;
-    position: absolute;
-    top: 118px;
-    left: 60px;
+    position: relative;
+    top: 80px;
+    left: 45px;
 }
 
 input#box_repetir_senha_new_user{
-    position:absolute;
-    top: 155px;
-    left: 60px;
+    position: relative;
+    top: 100px;
+    left: 45px;
     border-radius: 10px;
 }
 
 #btn_cadastrar_user{
     position: absolute;
-    top: 210px;
-    left: 230px;
+    left: 690px;
+    top: 410px;
     border-radius: 5px;
-    background: rgb(0, 119, 255);
-    border-color: rgb(0, 119, 255);
-    padding: 1px;
+    background: #96AAB0;
+    border-color: #96AAB0;
+    padding: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
 }
 
 #btn_cadastrar_new_user{
     position: absolute;
-    top: 190px;
-    left: 125px;
-    border-radius: 10px;
-    padding: 3px;
-    text-shadow: 2px 3px 5px black;
-    box-shadow: 15px 5px 15px black;
+    top: 215px;
+    left: 118px;
+    border-radius: 15px;
+    padding: 5px;
+    background-color: #96AAB0;
+    border-color: #96AAB0;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .Estilo_Msg_Do_Server{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     position: absolute;
-    top: calc(50% + 45%);
+    top: calc(50% + 32%);
     left: calc(50%);
     transform: translate(-50%, -50%);
     text-align: center;
-    text-shadow: 2px 2px 2px black;
+    text-shadow: 2px 2px 2px white;
     white-space: nowrap;
  }
 
 #img_cadeado_cadastro{
     width: 25px;
     position: absolute;
-    top: 115px;
-    left: 30px;
+    top: 130px;
+    left: 20px;
 }
 
 #img_cadeado2_cadastro{
     width: 25px;
     position: absolute;
-    top: 155px;
-    left: 30px;
+    top: 170px;
+    left: 20px;
 }
 
 #img_new_user{
     width: 25px;
     position: absolute;
-    top: 45px;
-    left: 30px;
+    top: 55px;
+    left: 20px;
 }
 
 .EstiloMsgUser{
     font-size: 14px;
-    font-family: 'Courier New', Courier, monospace;
-    text-shadow: 2px 2px 2px black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 2px 2px 2px white;
     position: absolute;
-    top: calc(50% + 30%);
+    top: calc(50% + 22%);
     left: calc(50%);
     transform: translate(-50%, -50%);
     text-align: center;
     white-space: nowrap;
 }
+
+#TxtUserTemConta{
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    position: absolute;
+    top: 270px;
+}
+
+#btn_retorna_login{
+    background: none;
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    position: absolute;
+    top: 283px;
+    left: 115px;
+    cursor: pointer;
+    color: white;
+    padding: 0px;
+}
+

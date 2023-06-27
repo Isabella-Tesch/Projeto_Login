@@ -1,0 +1,30 @@
+.ContainerDiv{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.ContainerDivParallax{
+    height: 500px;
+}
+
+.InsideParallax{
+    background: white;
+    padding: 20;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.CustomParallax{
+    position: absolute;
+    top: 40px;
+    left: -10px;
+    width: 1370px;
+}
+
+.ContainerConteudo{
+    background-color: white;
+}
+
+

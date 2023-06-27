@@ -8,6 +8,7 @@ import "/home/isa/projeto_login/client/src/App.css"
 export default function Estrutura_Login(){
     const [Usuario, AlterUsuario] = useState({user:"", senha:""})
     const [MostrarConteudoLogin, AlterMostrarConteudoLogin] = useState(true)
+    const [MostrarBntTxtDoCadastro, AlterMostrarBntTxtDoCadastro] = useState(true)
 
     var HandleChangeUsuario = (e) => {
         if (e.target.getAttribute("name") === "nome_usu"){
@@ -46,11 +47,17 @@ export default function Estrutura_Login(){
 
     var RemoverConteudoLogin = () => {
         AlterMostrarConteudoLogin(false)
+        AlterMostrarBntTxtDoCadastro(false)
     }
-    
+
+    var TrocaValorConteudoCadastro = () => {
+        AlterMostrarConteudoLogin(true)
+        AlterMostrarBntTxtDoCadastro(true)
+    }
+
     return(
         <div>
-            {MostrarConteudoLogin && (
+            {MostrarConteudoLogin  &&(
                 <section className='ConteudoLogin'>
                     <label id="Label_Nome">Nome</label><br/>
                     
@@ -59,7 +66,7 @@ export default function Estrutura_Login(){
                     <input id="box_user" name="nome_usu" value={Usuario.user} onChange={(e)=>HandleChangeUsuario(e)}></input><br/>
                     <br/>
 
-                    <label>Senha</label><br/>
+                    <label id="Label_Senha">Senha</label><br/>
 
                     <img id="img_cadeado" src={cadeado} alt="Imagem Cadeado da Senha"/> {" "}
 
@@ -73,6 +80,6 @@ export default function Estrutura_Login(){
                     <p id="ContainerMsgServer"></p>
                 </section>
             )}
-            <Cadastro_User RemoveConteudoLogin={RemoverConteudoLogin}/>
+            <Cadastro_User RemoveConteudoLogin={RemoverConteudoLogin} RetornaLogin={TrocaValorConteudoCadastro} MostrarBtnTxtDoCadastro={MostrarBntTxtDoCadastro}/>
         </div>
     )}
