@@ -3,20 +3,14 @@
     text-align: center;
 }
 
-.ContainerDivParallax{
-    height: 500px;
-}
-
 .InsideParallax{
-    background: white;
-    padding: 20;
     position: absolute;
-    top: 50%;
+    top: 120px;
     left: 50%;
-    transform: translate(-50%, -50%)
 }
 
 .CustomParallax{
+    height: 500px;
     position: absolute;
     top: 40px;
     left: -10px;
@@ -25,6 +19,35 @@
 
 .ContainerConteudo{
     background-color: white;
+    height: 800px;
+    width: 1380px;
+    position: absolute;
+    left: -10px;
 }
 
+.FraseInterativa{
+    color: white;
+    font: italic bold 20px Arial;
+    position: absolute;
+    top: 180px;
+    left: 50px;
+}
+
+.Profissao{
+    position: absolute;
+    top: 120px;
+    left: 50px;
+    font: italic bold 18px Arial;
+    color: white;
+}
+
+#ContainerMinhaDescricao{
+    position: absolute;
+    left: 400px;
+    font-size: 12px;
+    text-align: justify;
+    font: italic bold 15px Arial;
+}
+
+  
 
