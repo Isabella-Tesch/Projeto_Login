@@ -3,6 +3,7 @@ import Estrutura_Login from './componentes/Estrutura_Login'
 import './EstiloPaginaInicial.css'
 import MeuLogo from '/home/isa/projeto_login/client/src/componentes/imagens/Meu_Logo.png'
 import PageSobre from './componentes/PageSobre'
+import PageContato from './componentes/PageContato'
 
 export default function App(){
     const [ExibirPageInicial, AlterExibirPageInicial] = useState(false)
@@ -65,6 +66,7 @@ export default function App(){
                 <div>
                     {ItemMenuSelecionado == 'Login' && <Estrutura_Login />}
                     {ItemMenuSelecionado == 'Sobre' && <PageSobre />}
+                    {ItemMenuSelecionado == 'Contato' && <PageContato />}
                 </div>
             </section>
         </>

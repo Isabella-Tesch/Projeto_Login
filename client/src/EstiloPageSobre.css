@@ -19,7 +19,7 @@
 
 .ContainerConteudo{
     background-color: white;
-    height: 800px;
+    height: 500px;
     width: 1380px;
     position: absolute;
     left: -10px;
@@ -43,10 +43,16 @@
 
 #ContainerMinhaDescricao{
     position: absolute;
-    left: 400px;
+    left: 360px;
     font-size: 12px;
     text-align: justify;
     font: italic bold 15px Arial;
+}
+
+#Meu_Nome{
+    text-align: center;
+    font: bold 25px Arial;
+    text-shadow: 2px 2px 2px black;
 }
 
   

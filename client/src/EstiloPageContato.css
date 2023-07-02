@@ -1,0 +1,73 @@
+.QuadroContatos{
+    position: absolute;
+    top: 120px;
+    left: 480px;
+    background: white;
+    height: 400px;
+    width: 400px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px black;
+}
+
+#TxtContato{
+    text-align: center;
+    color: #3c3f74;
+    font: italic bold 20px Arial;
+}
+
+#EnvelopeEmail{
+    position: absolute;
+    top: 85px;
+    left: 70px;
+}
+
+#TxtEmail{
+    font: bold 17px Arial;
+    position: absolute;
+    top: 90px;
+    left: 10px;
+    color: #3c3f74;
+}
+
+#EmailOutlook{
+    font: lighter 13px Arial;
+    position: absolute;
+    top: 110px;
+    left: 10px;
+    text-decoration: underline;
+}
+
+#EmailGmail{
+    font: lighter 13px Arial;
+    position: absolute;
+    top: 130px;
+    left: 10px;
+    text-decoration: underline;
+}
+
+#TxtCelular{
+    position: absolute;
+    top: 200px;
+    left: 10px;
+    font: bold 17px Arial;
+    color: #3c3f74;
+}
+
+#ImgCelular{
+    position: absolute;
+    left: 85px;
+    top: 195px;
+}
+
+#NumCelular{
+    font: lighter 13px Arial;
+    position: absolute;
+    top: 220px;
+    left: 10px;
+}
+
+#ImagemWhatsapp{
+    width: 150px;
+    position: absolute;
+    top: 255px;
+}
