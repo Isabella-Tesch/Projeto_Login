@@ -10,7 +10,7 @@ export default function PageSobre(){
         <div className="ContainerDiv">
             <Parallax bgImage={ImagemFundo} strength={500} className="CustomParallax">
                 <p className="Profissao">Desenvolvedora Web</p>
-                <Typed strings={["Programadora de Python e Javascript"]} typeSpeed={40} backSpeed={40} loop cursorChar='_' className="FraseInterativa"/>   
+                <Typed strings={["Programadora de Python e Javascript", "Detalhamento visual com HTML e CSS"]} typeSpeed={40} backSpeed={40} loop cursorChar='_' className="FraseInterativa"/>   
             </Parallax>
 
             <div className="ContainerConteudo">
@@ -23,15 +23,15 @@ export default function PageSobre(){
                     </p>
 
                     <p>
-                        Meu aprendizado também é focado em tecnologias como React, CSS e HTML. Com React, crio interfaces <br/> de usuário 
-                        interativas,componentes reutilizáveis e desenvolvo aplicações web simples. <br/> Por outro lado, meu conhecimento em CSS 
-                        e HTML me permite estilizar elementos e fornecer <br/> uma experência visual atraente aos usuários.
+                        Meu aprendizado também é focado em tecnologias como React, CSS e HTML. Com React, desenvolvo <br/> interfaces de usuário 
+                        interativas, componentes reutilizáveis e realizo aplicações web simples. <br/> Por outro lado, meu conhecimento em CSS 
+                        e HTML me permite estilizar elementos e fornecer uma <br/> experência visual atraente aos usuários.
                     </p>
 
                     <p>
-                        Além disso, possuo conhecimento na biblioteca Tkinter do Python que me permite desenvolver <br/> interfaces gráficas 
-                        de usuário para aplicativos desktop. Na ferramente Tkinter é possível criar <br/> janelas, botões, caixas de diálogo 
-                        e outros elementos para melhorar a acessibilidade e a <br/> interação com o usuário em aplicativos desktop. 
+                        Além disso, possuo conhecimento na biblioteca Tkinter do Python que me permite criar interfaces <br/> gráficas 
+                        de usuário para aplicativos desktop. Na ferramenta Tkinter é possível criar janelas, botões, <br/> caixas de diálogo 
+                        e outros elementos para melhorar a acessibilidade e a interação com o usuário <br/> em aplicativos desktop. 
                     </p>
 
                     <p>
@@ -41,8 +41,8 @@ export default function PageSobre(){
 
                     <p>
                         Posso afirmar que sou uma profissional dedicada, apaixonada por aprender e me antenar nas <br/> últimas tecnologias para 
-                        melhorar nas práticas do desenvolvimento web. Busco sempre <br/> aperfeiçoar minhas habilidades e adotar novas tecnologias 
-                        para criar soluções eficazes <br/> e modernas.
+                        melhorar nas práticas do desenvolvimento web. Eu busco sempre <br/> aperfeiçoar minhas habilidades e adotar novas tecnologias 
+                        para criar soluções eficazes e <br/> modernas.
                     </p>
                 </div>
             </div>
